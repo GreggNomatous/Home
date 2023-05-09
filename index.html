@@ -2,24 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random YouTube Link Redirect</title>
+    <title>Random Website Opener</title>
     <script>
-        function openRandomLink() {
-            const links = [
-                "https://youtu.be/fEug1zVLTPI",
-                "https://youtu.be/UQkhOY2-VZM",
-                "https://youtu.be/W3r2utSC8F8"
+        function openRandomWebsite() {
+            var urls = [
+                'https://youtu.be/HM6whUEcgvg',
+                'https://youtu.be/S89PkvRQlnI',
+                'https://youtu.be/VbqpFE6Tp58',
+                'https://youtu.be/Yvd1VCIfoDI',
+                'https://youtu.be/XUZZknLslmk',
+                'https://youtu.be/DjUF0rVuqtg',
+                'https://youtu.be/OZCGTCGtUDw',
+                'https://youtu.be/-92YrUtzYYo',
+                'https://youtu.be/3dhZJC8GRWE',
+                'https://youtu.be/M4lVROjiHDA',
+                'https://youtu.be/IeI8vf3aAOk',
+                'https://youtu.be/EsFk35DuYTc',
+                'https://youtu.be/vI3DhhBMXvM',
+                'https://youtu.be/GODLFAh3ehU',
+                'https://youtu.be/lrdugzyO8nI',
+                'https://youtu.be/AP8aeoRyRkE',
+                'https://youtu.be/W3r2utSC8F8',
+                'https://youtu.be/UQkhOY2-VZM',
+                'https://youtu.be/lA0tUmN2xFg',
+                'https://youtu.be/HUWht3pdViY',
+                'https://youtu.be/3iyZrv4tMd8',
+                'https://youtu.be/fEug1zVLTPI'
             ];
 
-            const randomIndex = Math.floor(Math.random() * links.length);
-            const randomLink = links[randomIndex];
-
-            window.location.href = randomLink;
+            var randomUrl = urls[Math.floor(Math.random() * urls.length)];
+            window.location.href = randomUrl;
         }
     </script>
 </head>
-<body onload="openRandomLink()">
-    <h1>Redirecting to a random YouTube video...</h1>
+<body onload="openRandomWebsite()">
 </body>
 </html>
