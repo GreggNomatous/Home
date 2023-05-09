@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random YouTube Link Redirect</title>
+    <script>
+        function openRandomLink() {
+            const links = [
+                "https://youtu.be/fEug1zVLTPI",
+                "https://youtu.be/UQkhOY2-VZM",
+                "https://youtu.be/W3r2utSC8F8"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * links.length);
+            const randomLink = links[randomIndex];
+
+            window.location.href = randomLink;
+        }
+    </script>
+</head>
+<body onload="openRandomLink()">
+    <h1>Redirecting to a random YouTube video...</h1>
+</body>
+</html>
