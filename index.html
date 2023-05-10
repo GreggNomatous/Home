@@ -35,9 +35,13 @@
             var randomUrl = urls[Math.floor(Math.random() * urls.length)];
             window.location.href = randomUrl;
         }
+
+        function delayedOpen() {
+            setTimeout(openRandomWebsite, 1000);
+        }
     </script>
 </head>
-<body onload="openRandomWebsite()">
+<body onload="delayedOpen()">
     <a href='http://www.freevisitorcounters.com'>www.freevisitorcounters</a>
     <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=a15019e437cb0d99589f8623fbb99e02843a8fce'></script>
     <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1027900/t/0"></script>
