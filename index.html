@@ -11,7 +11,9 @@
         'https://youtu.be/dAW4nbAO7hk',
       ];
       const randomLink = links[Math.floor(Math.random() * links.length)];
-      window.location.href = randomLink;
+      setTimeout(function() {
+        window.location.href = randomLink;
+      }, 3000); // 3-second delay (3000 milliseconds)
     }
   </script>
   <script type="text/javascript" src="https://counter10.optistats.ovh/private/counter.js?c=2m8632fuyfmlhbyws69lsxrd41ku1a4n&down=async" async></script>
