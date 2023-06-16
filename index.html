@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  
-  <!-- Google tag (gtag.js) -->
+  <title>Embedded Random YouTube Video from Playlist (Autoplay and Mute)</title>
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y52VLEX5Z"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -11,29 +12,40 @@
 
   gtag('config', 'G-8Y52VLEX5Z');
 </script>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Link Opener</title>
-  
-  <script type="text/javascript" src="https://counter10.optistats.ovh/private/counter.js?c=2m8632fuyfmlhbyws69lsxrd41ku1a4n&down=async" async></script>
+
+<script type="text/javascript" src="https://counter10.optistats.ovh/private/counter.js?c=2m8632fuyfmlhbyws69lsxrd41ku1a4n&down=async" async></script>
+
 </head>
-<body onload="openRandomLink()">
-  <div id="sfc2m8632fuyfmlhbyws69lsxrd41ku1a4n"></div>
-  <br>
-  <a href="https://www.freecounterstat.com">web page counter</a>
-  <noscript>
-    <a href="https://www.freecounterstat.com" title="web page counter">
-      <img src="https://counter10.optistats.ovh/private/freecounterstat.php?c=2m8632fuyfmlhbyws69lsxrd41ku1a4n" border="0" title="web page counter" alt="web page counter">
-    </a>
-  </noscript>
+<body>
 
-  <!-- Inserted iframe code -->
-//  <iframe data-aa="2215818" src="//ad.a-ads.com/2215818?size=728x90" style="width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;"></iframe>
+  <!-- Random YouTube Video Embed -->
+  <div style="max-width: 560px;">
+    <iframe id="youtube-embed" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-x1ku2ceFZ4?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <!-- JavaScript Code -->
+  <script>
+    // Replace with your YouTube Data API Key
+    const apiKey = 'AIzaSyAk6MdDtm5gEQwGVJLz-lpfHAZSGNSzuMo';
+    // Replace with the playlist ID
+    const playlistId = 'PLpqGJbxsJLzei_Ij_f5rFOKAnqDzWjwz2';
 
+    // Fetch playlist videos using YouTube Data API
+    fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${apiKey}`)
+      .then(response => response.json())
+      .then(data => {
+        const videos = data.items;
+        const randomIndex = Math.floor(Math.random() * videos.length);
+        const randomVideoId = videos[randomIndex].snippet.resourceId.videoId;
+        const embedUrl = `https://www.youtube.com/embed/${randomVideoId}?autoplay=1&mute=1`;
+        document.getElementById('youtube-embed').src = embedUrl;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
 
+<iframe data-aa="2215818" src="//ad.a-ads.com/2215818?size=728x90" style="width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;"></iframe>
 
 </body>
 </html>
